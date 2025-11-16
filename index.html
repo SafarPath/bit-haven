@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BH Token - Complete MLM Crypto Ecosystem</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .diagram-frame {
+            background: #1a1a1a;
+            border: 2px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .diagram-header {
+            background: #2d2d2d;
+            padding: 15px;
+            border-radius: 8px 8px 0 0;
+            margin: -20px -20px 20px -20px;
+            border-bottom: 1px solid #444;
+        }
+        .node {
+            background: #2d3748;
+            border: 1px solid #4a5568;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px;
+            display: inline-block;
+            min-width: 120px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .node:hover {
+            transform: scale(1.05);
+            background: #4a5568;
+            border-color: #00ff00;
+        }
+        .level-badge {
+            background: #00ff00;
+            color: #000;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .income-badge {
+            background: #ff6b6b;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .tab-button {
+            background: #2d3748;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 8px 8px 0 0;
+            color: #cbd5e0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .tab-button.active {
+            background: #4a5568;
+            color: white;
+            border-bottom: 2px solid #00ff00;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .flow-arrow {
+            display: inline-block;
+            margin: 0 10px;
+            color: #00ff00;
+            font-weight: bold;
+        }
+        .bh-token-glow {
+            text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+        }
+        .monoline-path {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 5s linear forwards;
+        }
+        @keyframes dash {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold mb-4 bh-token-glow">BH TOKEN ECOSYSTEM</h1>
+            <p class="text-xl mb-2">Hybrid Crypto + MLM System - Complete Implementation</p>
+            <div class="flex justify-center space-x-4 mt-6 flex-wrap">
+                <span class="px-4 py-2 bg-white bg-opacity-20 rounded-full mb-2">⚡ 6 Income Streams</span>
+                <span class="px-4 py-2 bg-white bg-opacity-20 rounded-full mb-2">💠 21-Level Unilevel</span>
+                <span class="px-4 py-2 bg-white bg-opacity-20 rounded-full mb-2">📈 NFT ROI System</span>
+                <span class="px-4 py-2 bg-white bg-opacity-20 rounded-full mb-2">🔥 1.2M BH Token</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <section class="bg-gray-800 py-4">
+        <div class="container mx-auto px-4">
+            <div class="flex overflow-x-auto">
+                <button class="tab-button active" onclick="switchTab('overview')">
+                    <i class="fas fa-layer-group mr-2"></i>System Overview
+                </button>
+                <button class="tab-button" onclick="switchTab('entry')">
+                    <i class="fas fa-sign-in-alt mr-2"></i>Entry & Activation
+                </button>
+                <button class="tab-button" onclick="switchTab('direct')">
+                    <i class="fas fa-handshake mr-2"></i>Direct Bonus
+                </button>
+                <button class="tab-button" onclick="switchTab('unilevel')">
+                    <i class="fas fa-sitemap mr-2"></i>Unilevel (21 Levels)
+                </button>
+                <button class="tab-button" onclick="switchTab('monoline')">
+                    <i class="fas fa-stream mr-2"></i>Monoline System
+                </button>
+                <button class="tab-button" onclick="switchTab('nft')">
+                    <i class="fas fa-gem mr-2"></i>NFT ROI System
+                </button>
+                <button class="tab-button" onclick="switchTab('loan')">
+                    <i class="fas fa-hand-holding-usd mr-2"></i>Loan System
+                </button>
+                <button class="tab-button" onclick="switchTab('tokenomics')">
+                    <i class="fas fa-coins mr-2"></i>Tokenomics
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        
+        <!-- System Overview Tab -->
+        <div id="overview" class="tab-content active">
+            <h2 class="text-3xl font-bold mb-6 text-center">Complete System Overview</h2>
+            
+            <div class="diagram-frame">
+                <div class="diagram-header">
+                    <h3 class="text-xl font-bold text-green-400">6 Major Income Streams + 3 Token Utilities</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Income Streams -->
+                    <div>
+                        <h4 class="text-lg font-bold text-blue-400 mb-4">Income Streams</h4>
+                        <div class="space-y-3">
+                            <div class="node bg-blue-900 border-blue-500">
+                                <i class="fas fa-stream text-xl mb-2"></i>
+                                <div>Monoline Income</div>
+                            </div>
+                            <div class="node bg-green-900 border-green-500">
+                                <i class="fas fa-sitemap text-xl mb-2"></i>
+                                <div>Unilevel Income (21 Levels)</div>
+                            </div>
+                            <div class="node bg-purple-900 border-purple-500">
+                                <i class="fas fa-handshake text-xl mb-2"></i>
+                                <div>Direct Bonus (8%)</div>
+                            </div>
+                            <div class="node bg-yellow-900 border-yellow-500">
+                                <i class="fas fa-trophy text-xl mb-2"></i>
+                                <div>Rank Rewards</div>
+                            </div>
+                            <div class="node bg-red-900 border-red-500">
+                                <i class="fas fa-gem text-xl mb-2"></i>
+                                <div>NFT-Based ROI System</div>
+                            </div>
+                            <div class="node bg-indigo-900 border-indigo-500">
+                                <i class="fas fa-hand-holding-usd text-xl mb-2"></i>
+                                <div>Loan + Restaking System</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Token Utilities -->
+                    <div>
+                        <h4 class="text-lg font-bold text-purple-400 mb-4">Token Mechanics</h4>
+                        <div class="space-y-3">
+                            <div class="node bg-gray-800 border-gray-600">
+                                <i class="fas fa-coins text-xl mb-2"></i>
+                                <div>1.2M Fixed Supply</div>
+                                <div class="text-xs">BH Token</div>
+                            </div>
+                            <div class="node bg-red-900 border-red-500">
+                                <i class="fas fa-fire text-xl mb-2"></i>
+                                <div>9% Burning Protocol</div>
+                            </div>
+                            <div class="node bg-green-900 border-green-500">
+                                <i class="fas fa-lock text-xl mb-2"></i>
+                                <div>Staking + ROI + Holding</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 p-4 bg-gray-800 rounded-lg">
+                    <h4 class="font-bold text-yellow-400 mb-2">System Flow</h4>
+                    <div class="text-center">
+                        <div class="node bg-green-900 border-green-500">
+                            <div>Free Registration</div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="node bg-blue-900 border-blue-500">
+                            <div>$30 Activation</div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="node bg-purple-900 border-purple-500">
+                            <div>Build Network</div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="node bg-red-900 border-red-500">
+                            <div>Earn Multiple Incomes</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Entry & Activation Tab -->
+        <div id="entry" class="tab-content">
+            <h2 class="text-3xl font-bold mb-6 text-center">Entry & Activation Structure</h2>
+            
+            <div class="diagram-frame">
+                <div class="diagram-header">
+                    <h3 class="text-xl font-bold text-blue-400">Registration Process</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-bold text-green-400 mb-4">Entry Requirements</h4>
+                        <div class="space-y-4">
+                            <div class="bg-gray-800 p-4 rounded-lg">
+                                <div class="flex items-center">
+                                    <i class="fas fa-user-check text-green-400 text-xl mr-3"></i>
+                                    <div>
+                                        <div class="font-bold">Free Entry</div>
+                                        <div class="text-sm text-gray-400">Desk Approach</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-gray-800 p-4 rounded-lg">
+                                <div class="flex items-center">
+                                    <i class="fas fa-bolt text-yellow-400 text-xl mr-3"></i>
+                                    <div>
+                                        <div class="font-bold">$30 One-Time Activation</div>
+                                        <div class="text-sm text-gray-400">Unlock All Income Streams</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-bold text-purple-400 mb-4">Referral Logic</h4>
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <div class="text-center mb-4">
+                                <div class="node bg-blue-900 border-blue-500 mx-auto">
+                                    <div>New User</div>
+                                    <div class="text-xs">Free Registration</div>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center">
+                                <div class="flow-arrow">↓</div>
+                                <div class="node bg-purple-900 border-purple-500 mx-auto">
+                                    <div>Buys BH Tokens</div>
+                                    <div class="text-xs">$30 Activation</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-center space-x-4 mt-4">
+                                <div class="text-center">
+                                    <div class="flow-arrow">↓</div>
+                                    <div class="node bg-green-900 border-green-500">
+                                        <div>Chooses Referrer</div>
+                                        <div class="text-xs">Via Referral Link</div>
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="flow-arrow">↓</div>
+                                    <div class="node bg-red-900 border-red-500">
+                                        <div>Auto-join Company</div>
+                                        <div class="text-xs">If No Referrer Selected</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h4 class="text-lg font-bold text-yellow-400 mb-4">Income Breakdown</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-green-900 bg-opacity-30 p-4 rounded-lg border border-green-700 text-center">
+                            <div class="text-2xl font-bold text-green-400">8%</div>
+                            <div class="text-sm">Direct Bonus</div>
+                        </div>
+                        <div class="bg-blue-900 bg-opacity-30 p-4 rounded-lg border border-blue-700 text-center">
+                            <div class="text-2xl font-bold text-blue-400">7%</div>
+                            <div class="text-sm">Unilevel Bonus</div>
+                        </div>
+                        <div class="bg-purple-900 bg-opacity-30 p-4 rounded-lg border border-purple-700 text-center">
+                            <div class="text-2xl font-bold text-purple-400">3%</div>
+                            <div class="text-sm">Rank Pool</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Direct Bonus Tab -->
+        <div id="direct" class="tab-content">
+            <h2 class="text-3xl font-bold mb-6 text-center">Direct Bonus System</h2>
+            
+            <div class="diagram-frame">
+                <div class="diagram-header">
+                    <h3 class="text-xl font-bold text-green-400">8% Direct Bonus Structure</h3>
+                </div>
+                
+                <div class="text-center mb-8">
+                    <div class="node bg-green-900 border-green-500">
+                        <i class="fas fa-user-plus text-2xl mb-2"></i>
+                        <div>New Member Joins</div>
+                        <div class="text-xs">Via Your Referral</div>
+                    </div>
+                    
+                    <div class="flow-arrow">→</div>
+                    
+                    <div class="node bg-blue-900 border-blue-500">
+                        <i class="fas fa-shopping-cart text-2xl mb-2"></i>
+                        <div>Pays $30 Activation</div>
+                    </div>
+                    
+                    <div class="flow-arrow">→</div>
+                    
+                    <div class="node bg-purple-900 border-purple-500">
+                        <i class="fas fa-money-bill-wave text-2xl mb-2"></i>
+                        <div>You Get 8% Bonus</div>
+                        <div class="income-badge">$2.40</div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h4 class="text-lg font-bold text-yellow-400 mb-4">Calculation Example</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+                        <div class="bg-gray-700 p-4 rounded-lg">
+                            <div class="text-2xl font-bold">10</div>
+                            <div class="text-sm">Joinings</div>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <i class="fas fa-times text-gray-400"></i>
+                        </div>
+                        <div class="bg-gray-700 p-4 rounded-lg">
+                            <div class="text-2xl font-bold">$30</div>
+                            <div class="text-sm">Each</div>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <i class="fas fa-equals text-gray-400"></i>
+                        </div>
+                        <div class="bg-gray-700 p-4 rounded-lg md:col-span-4">
+                            <div class="text-2xl font-bold">$300</div>
+                            <div class="text-sm">Total Value</div>
+                        </div>
+                        <div class="flex items-center justify-center md:col-span-4">
+                            <i class="fas fa-arrow-down text-gray-400"></i>
+                        </div>
+                        <div class="bg-green-900 p-4 rounded-lg md:col-span-4">
+                            <div class="text-2xl font-bold text-green-400">$24</div>
+                            <div class="text-sm">Direct Income (8%)</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 p-4 bg-blue-900 bg-opacity-30 rounded-lg">
+                    <h4 class="font-bold text-blue-400 mb-2">Formula</h4>
+                    <div class="text-center text-xl font-mono">
+                        Direct Bonus = Joining Amount × 8%
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Unilevel Income Tab -->
+        <div id="unilevel" class="tab-content">
+            <h2 class="text-3xl font-bold mb-6 text-center">21-Level Unilevel Income</h2>
+            
+            <div class="diagram-frame">
+                <div class="diagram-header">
+                    <h3 class="text-xl font-bold text-blue-400">Commission Structure - Total 7% Distribution</h3>
+                </div>
+                
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-700">
+                        <thead>
+                            <tr class="bg-gray-800">
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Level Range</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Percentage</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Commission</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">Example Team</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-gray-900 divide-y divide-gray-800">
+                            <tr>
+                                <td class="px-4 py-3 whitespace-nowrap">Level 1</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-green-400 font-bold">2.0%</td>
+                                <td class="px-4 py-3 whitespace-nowrap">$0.60 per joining</td>
+                                <td class="px-4 py-3 whitespace-nowrap">12 Members</td>
+                            </tr>
+                            <tr class="bg-gray-800">
+                                <td class="px-4 py-3 whitespace-nowrap">Level 2-3</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-blue-400 font-bold">0.5% each</td>
+                                <td class="px-4 py-3 whitespace-nowrap">$0.15 per joining</td>
+                                <td class="px-4 py-3 whitespace-nowrap">170 Members</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 whitespace-nowrap">Level 4-15</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-purple-400 font-bold">0.25% each</td>
+                                <td class="px-4 py-3 whitespace-nowrap">$0.075 per joining</td>
+                                <td class="px-4 py-3 whitespace-nowrap">2,000 Members</td>
+                            </tr>
+                            <tr class="bg-gray-800">
+                                <td class="px-4 py-3 whitespace-nowrap">Level 16-19</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-yellow-400 font-bold">0.17% each</td>
+                                <td class="px-4 py-3 whitespace-nowrap">$0.051 per joining</td>
+                                <td class="px-4 py-3 whitespace-nowrap">5,000 Members</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 whitespace-nowrap">Level 20-21</td>
+                                <td class="px-4 py-3 whitespace-nowrap text-red-400 font-bold">0.16% each</td>
+                                <td class="px-4 py-3 whitespace-nowrap">$0.048 per joining</td>
+                                <td class="px-4 py-3 whitespace-nowrap">8,000 Members</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mt-6 bg-gray-800 p-4 rounded-lg">
+                    <h4 class="font-bold text-green-400 mb-2">Total Potential Monthly Income</h4>
+                    <div class="text-2xl font-bold text-center text-green-400">$36,462</div>
+                    <div class="text-sm text-gray-400 text-center">Based on 15,182 active members @ $30 activation each</div>
+                </div>
+            </div>
+            
+            <div class="diagram-frame mt-8">
+                <div class="diagram-header">
+                    <h3 class="text-xl font-bold text-purple-400">Unilevel Structure Visualization</h3>
+                </div>
+                
+                <div class="text-center py-4">
+                    <div class="mb-6">
+                        <div class="node bg-green-900 border-green-500 mx-auto">
+                            <div>YOU</div>
+                            <div class="text-xs">Earn from all 21 levels</div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="text-center">
+                            <div class="node bg-blue-900 border-blue-500">
+                                <div>Level 1</div>
+                                <div class="level-badge">2.0%</div>
+                            </div>
+                            <div class="text-xs text-gray-400 mt-2">Direct referrals</div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="node bg-purple-900 border-purple-500">
+                                <div>Level 2-3</div>
+                                <div class="level-badge">0.5% each</div>
+                            </div>
+                            <div class="text-xs text-gray-400 mt-2">Their referrals</div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="node bg-yellow-900 border-yellow-500">
+                                <div>Level 4-21</div>
+                                <div class="level-badge">0.25%-0.16%</div>
+                            </div>
+                            <div class="text-xs text-gray-400 mt-2">Extended network</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Monoline System Tab -->
+        <div id="monoline" class="tab-content">
+            <h2 class="text-3xl font-bold mb-6 text-center">Monoline System</h2>
+            
+            <div class="diagram-frame">
+                <div class="diagram-header">
+                    <h3 class="text-xl font-bold text-purple-400">Global Single Line Structure</h3>
+                </div>
+                
+                <div class="overflow-x-auto py-4">
+                    <div class="flex space-x-4 min-w-max">
+                        <div class="node bg-green-900 border-green-500">
+                            <div>User 1</div>
+                            <div class="level-badge">Level 1</div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-arrow-right text-green-400 text-xl"></i>
+                        </div>
+                        <div class="node bg-blue-900 border-blue-500">
+                            <div>User 2</div>
+                            <div class="level-badge">Level 2</div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-arrow-right text-green-400 text-xl"></i>
+                        </div>
+                        <div class="node bg-purple-900 border-purple-500">
+                            <div>User 3</div>
+                            <div class="level-badge">Level 3</div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-arrow-right text-green-400 text-xl"></i>
+                        </div>
+                        <div class="node bg-yellow-900 border-yellow-500">
+                            <div>User 4</div>
+                            <div class="level-badge">Level 4</div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-arrow-right text-green-400 text-xl"></i>
+                        </div>
+                        <div class="node bg-red-900 border-red-500">
+                            <div>User 5</div>
+                            <div class="level-badge">Level 5</div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-arrow-right text-green-400 text-xl"></i>
+                        </div>
+                        <div class="text-gray-400 py-4">... continues with new users joining at the end</div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 p-4 bg-gray-800 rounded-lg">
+                    <h4 class="font-bold text-blue-400 mb-2">Monoline Core Purpose</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-gray-700 p-3 rounded-lg">
+                            <i class="fas fa-gem text-purple-400 mr-2"></i>
+                            <span>Levels unlock for NFT</span>
+                        </div>
+                        <div class="bg-gray-700 p-3 rounded-lg">
+                            <i class="fas fa-trophy text-yellow-400 mr-2"></i>
+                            <span>Ranks unlock</span>
+                        </div>
+                        <div class="bg-gray-700 p-3 rounded-lg">
+                            <i class="fas fa-hand-holding-usd text-green-400 mr-2"></i>
+                            <span>Loan eligibility</span>
+                        </div>
+                        <div class="bg-gray-700 p-3 rounded-lg">
+                            <i class="fas fa-chart-line text-red-400 mr-2"></i>
+                            <span>Performance tracking</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NFT ROI System Tab -->
+        <div id="nft" class="tab-content">
+            <h2 class="text-3xl font-bold mb-6 text-center">NFT-Based ROI System</h2>
+            
+            <div class="diagram-frame">
+                <div class="diagram-header">
+                    <h3 class="text-xl font-bold text-purple-400">NFT Unlock & ROI System</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-bold text-green-400 mb-4">Eligibility & ROI Model</h4>
+                        <div class="space-y-4">
+                            <div class="bg-gray-800 p-4 rounded-lg">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check-circle text-green-400 text-xl mr-3"></i>
+                                    <div>
+                                        <div class="font-bold">Complete Monoline Level 5</div>
+                                        <div class="text-sm text-gray-400">Receive $1000 NFT</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-gray-800 p-4 rounded-lg">
+                                <div class="flex items-center">
+                                    <i class="fas fa-chart-line text-blue-400 text-xl mr-3"></i>
+                                    <div>
+                                        <div class="font-bold">3.3% Monthly ROI</div>
+                                        <div class="text-sm text-gray-400">Token-based, 5 days/week payout</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-gray-800 p-4 rounded-lg">
+                                <div class="flex items-center">
+                                    <i class="fas fa-rocket text-red-400 text-xl mr-3"></i>
+                                    <div>
+                                        <div class="font-bold">ROI Boost System</div>
+                                        <div class="text-sm text-gray-400">+1.7% per downline achiever (No limit)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-bold text-blue-400 mb-4">NFT Upgrade Path</h4>
+                        <div class="space-y-3">
+                            <div class="bg-gray-800 p-3 rounded-lg flex justify-between items-center">
+                                <div>
+                                    <div class="font-bold">Level 5</div>
+                                    <div class="text-sm text-gray-400">$1,000 NFT</div>
+                                </div>
+                                <div class="level-badge">3.3% ROI</div>
+                            </div>
+                            <div class="bg-gray-800 p-3 rounded-lg flex justify-between items-center">
+                                <div>
+                                    <div class="font-bold">Level 8</div>
+                                    <div class="text-sm text-gray-400">$3,000 NFT</div>
+                                </div>
+                                <div class="level-badge">Enhanced</div>
+                            </div>
+                            <div class="bg-gray-800 p-3 rounded-lg flex justify-between items-center">
+                                <div>
+                                    <div class="font-bold">Level 12</div>
+                                    <div class="text-sm text-gray-400">$6,000 NFT</div>
+                                </div>
+                                <div class="level-badge">Premium</div>
+                            </div>
+                            <div class="bg-gray-800 p-3 rounded-lg flex justify-between items-center">
+                                <div>
+                                    <div class="font-bold">Level 16</div>
+                                    <div class="text-sm text-gray-400">$10,000 NFT</div>
+                                </div>
+                                <div class="level-badge">VIP</div>
+                            </div>
+                            <div class="bg-gray-800 p-3 rounded-lg flex justify-between items-center">
+                                <div>
+                                    <div class="font-bold">Level 21</div>
+                                    <div class="text-sm text-gray-400">$25,000 NFT</div>
+                                </div>
+                                <div class="level-badge">Maximum</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h4 class="text-lg font-bold text-yellow-400 mb-4">NFT Maintenance Rule</h4>
+                    <div class="bg-yellow-900 bg-opacity-30 p-4 rounded-lg border border-yellow-700">
+                        <div class="flex items-center">
+                            <i class="fas fa-exclamation-triangle text-yellow-400 text-xl mr-3"></i>
+                            <div>
+                                <div class="font-bold">Monthly Requirement: 1 New Direct Joining</div>
+                                <div class="text-sm">No joining → ROI suspended until requirement met</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loan System Tab -->
+        <div id="loan" class="tab-content">
+            <h2 class="text-3xl font-bold mb-6 text-center">Loan & Restaking System</h2>
+            
+            <div class="diagram-frame">
+                <div class="diagram-header">
+                    <h3 class="text-xl font-bold text-green-400">Loan Eligibility & Structure</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-bold text-blue-400 mb-4">Loan Requirements</h4>
+                        <div class="bg-gray-800 p-4 rounded-lg mb-6">
+                            <div class="flex items-center">
+                                <i class="fas fa-trophy text-yellow-400 text-xl mr-3"></i>
+                                <div>
+                                    <div class="font-bold">Gold Rank Achiever</div>
+                                    <div class="text-sm text-gray-400">Required for loan access</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-lg font-bold text-purple-400 mb-4">Loan Amounts Available</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-gray-800 p-3 rounded-lg text-center">
+                                <div class="font-bold">$1,000</div>
+                            </div>
+                            <div class="bg-gray-800 p-3 rounded-lg text-center">
+                                <div class="font-bold">$2,000</div>
+                            </div>
+                            <div class="bg-gray-800 p-3 rounded-lg text-center">
+                                <div class="font-bold">$3,000</div>
+                            </div>
+                            <div class="bg-gray-800 p-3 rounded-lg text-center">
+                                <div class="font-bold">$4,000</div>
+                            </div>
+                            <div class="bg-gray-800 p-3 rounded-lg text-center md:col-span-2">
+                                <div class="font-bold">$5,000</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-bold text-red-400 mb-4">Loan Recovery System</h4>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full divide-y divide-gray-700">
+                                <thead>
+                                    <tr class="bg-gray-800">
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase">Loan Amount</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase">Monthly Deduction</th>
+                                        <th class="px-4 py-3 text-left text-xs font-medium text-gray-400 uppercase">Monthly Payment</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-gray-900 divide-y divide-gray-800">
+                                    <tr>
+                                        <td class="px-4 py-3">$1,000</td>
+                                        <td class="px-4 py-3 text-red-400 font-bold">10%</td>
+                                        <td class="px-4 py-3">$100</td>
+                                    </tr>
+                                    <tr class="bg-gray-800">
+                                        <td class="px-4 py-3">$2,000</td>
+                                        <td class="px-4 py-3 text-red-400 font-bold">20%</td>
+                                        <td class="px-4 py-3">$400</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3">$3,000</td>
+                                        <td class="px-4 py-3 text-red-400 font-bold">30%</td>
+                                        <td class="px-4 py-3">$900</td>
+                                    </tr>
+                                    <tr class="bg-gray-800">
+                                        <td class="px-4 py-3">$4,000</td>
+                                        <td class="px-4 py-3 text-red-400 font-bold">40%</td>
+                                        <td class="px-4 py-3">$1,600</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-3">$5,000</td>
+                                        <td class="px-4 py-3 text-red-400 font-bold">50%</td>
+                                        <td class="px-4 py-3">$2,500</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h4 class="text-lg font-bold text-yellow-400 mb-4">Token Unlock Cycle</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <div class="text-2xl font-bold text-green-400">50%</div>
+                            <div class="text-sm">Repaid</div>
+                            <div class="level-badge mt-2">5% Tokens Unlock</div>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <div class="text-2xl font-bold text-blue-400">70%</div>
+                            <div class="text-sm">Repaid</div>
+                            <div class="level-badge mt-2">10% Tokens Unlock</div>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <div class="text-2xl font-bold text-purple-400">100%</div>
+                            <div class="text-sm">Repaid</div>
+                            <div class="level-badge mt-2">Full Unlock + Staking</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-green-900 bg-opacity-30 p-4 rounded-lg border border-green-700">
+                    <h4 class="text-lg font-bold text-green-400 mb-2">Restaking Program (After Loan Repaid)</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="text-center">
+                            <i class="fas fa-percentage text-2xl text-green-400 mb-2"></i>
+                            <div class="font-bold">3% Monthly ROI</div>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-coins text-2xl text-yellow-400 mb-2"></i>
+                            <div class="font-bold">Token-based</div>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-lock text-2xl text-red-400 mb-2"></i>
+                            <div class="font-bold">12 Months Lock</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tokenomics Tab -->
+        <div id="tokenomics" class="tab-content">
+            <h2 class="text-3xl font-bold mb-6 text-center">BH Token Tokenomics</h2>
+            
+            <div class="diagram-frame">
+                <div class="diagram-header">
+                    <h3 class="text-xl font-bold text-yellow-400">Token Supply & Distribution</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-bold text-green-400 mb-4">Supply Details</h4>
+                        <div class="space-y-4">
+                            <div class="bg-gray-800 p-4 rounded-lg">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <div class="font-bold">Total Supply</div>
+                                        <div class="text-sm text-gray-400">Fixed forever</div>
+                                    </div>
+                                    <div class="text-2xl font-bold text-green-400">1.2M</div>
+                                </div>
+                            </div>
+                            <div class="bg-gray-800 p-4 rounded-lg">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <div class="font-bold">Circulating Supply</div>
+                                        <div class="text-sm text-gray-400">At launch</div>
+                                    </div>
+                                    <div class="text-2xl font-bold text-blue-400">20%</div>
+                                </div>
+                            </div>
+                            <div class="bg-gray-800 p-4 rounded-lg">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <div class="font-bold">Locked Supply</div>
+                                        <div class="text-sm text-gray-400">For staking & ecosystem</div>
+                                    </div>
+                                    <div class="text-2xl font-bold text-purple-400">80%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-bold text-red-400 mb-4">9% Burning Protocol</h4>
+                        <div class="space-y-3">
+                            <div class="bg-gray-800 p-3 rounded-lg flex items-center">
+                                <i class="fas fa-fire text-red-400 mr-3"></i>
+                                <span>NFT ROI Payouts</span>
+                            </div>
+                            <div class="bg-gray-800 p-3 rounded-lg flex items-center">
+                                <i class="fas fa-fire text-red-400 mr-3"></i>
+                                <span>Internal Exchange</span>
+                            </div>
+                            <div class="bg-gray-800 p-3 rounded-lg flex items-center">
+                                <i class="fas fa-fire text-red-400 mr-3"></i>
+                                <span>Token Transfers</span>
+                            </div>
+                            <div class="bg-gray-800 p-3 rounded-lg flex items-center">
+                                <i class="fas fa-fire text-red-400 mr-3"></i>
+                                <span>Fee Collections</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8">
+                    <h4 class="text-lg font-bold text-blue-400 mb-4">Token Price Mechanism</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-gray-800 p-4 rounded-lg text-center">
+                            <div class="text-2xl mb-2">📊</div>
+                            <div class="font-bold">Market Cap Formula</div>
+                            <div class="text-sm text-gray-400 mt-2">Price = Market Cap ÷ Circulating Supply</div>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg text-center">
+                            <div class="text-2xl mb-2">🔥</div>
+                            <div class="font-bold">Burning Effect</div>
+                            <div class="text-sm text-gray-400 mt-2">Supply ↓ → Price ↑</div>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg text-center">
+                            <div class="text-2xl mb-2">🔒</div>
+                            <div class="font-bold">Staking Impact</div>
+                            <div class="text-sm text-gray-400 mt-2">Locked tokens → Circulation ↓ → Price ↑</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-8 bg-green-900 bg-opacity-30 p-4 rounded-lg border border-green-700">
+                    <h4 class="text-lg font-bold text-green-400 mb-2">Sustainability Features</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <ul class="space-y-2">
+                                <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> 9% burning on transactions</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> ROI paid in tokens</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> Locked tokens system</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="space-y-2">
+                                <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> Auto loan repayment</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> Balanced payouts</li>
+                                <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> NFT performance based</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+
+
+    <script>
+        // Tab switching functionality
+        function switchTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Remove active class from all tab buttons
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked button
+            event.currentTarget.classList.add('active');
+        }
+
+        // Add hover effects and animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add animation to nodes on hover
+            const nodes = document.querySelectorAll('.node');
+            nodes.forEach(node => {
+                node.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05)';
+                    this.style.boxShadow = '0 4px 12px rgba(0, 255, 0, 0.3)';
+                });
+                
+                node.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                    this.style.boxShadow = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
